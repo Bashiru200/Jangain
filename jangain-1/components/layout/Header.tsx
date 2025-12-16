@@ -26,13 +26,15 @@ const Header: React.FC = () => {
                  />
             </div> */}
               {/* Navigation Menu */}
-              <nav className="w-full mt-4 md:mt-0 md:w-auto md:ml-6 overflow-x-auto scrollbar-hide">
-                    <ul className="flex gap-4 text-lg text-gray-500 font-medium whitespace-nowrap">
+              <nav className="w-full mt-4 md:mt-0 md:w-auto md:ml-6 overflow-y-x-auto scrollbar-hide">
+                    <ul className="flex gap-4 text-xl md: text-xl font-semibold text-gray-500 font-medium whitespace-nowrap">
                         {navMenu.map((type) => (
                         <li key={type}>
                             <Link
                                 href={`/navMenu/${type.toLowerCase()}`}
-                                className="hover:text-teal-600 transition rounded-md px-2 py-1">
+                                className="hover: relative w-fit cursor-pointer after:content-[''] after:absolute after:left-0 after:bottom-0
+                                    after:w-0 after:h-[2px] after:bg-teal-500 after:transition-all after:duration-300
+                                    hover:after:w-full text-gray-600 transition rounded-md px-2 py-1">
                                 {type}
                             </Link>
                        </li>
@@ -43,7 +45,7 @@ const Header: React.FC = () => {
             {/* Auth Buttons */}
             <div className="flex gap-4 items-center">
  
-                <Link href="/signup" className="bg-teal-600 text-white px-4 py-2 rounded-full hover:bg-teal-700 transition">
+                <Link href="/signup" className="bg-teal-600 text-white text-xl md: text-5xl font-extrabold px-4 py-2 rounded-full hover:bg-teal-700 transition">
                     Login to Portal
                 </Link>"
             </div>
